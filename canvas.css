@@ -1,0 +1,135 @@
+*{
+   margin: 0;
+   padding: 0;
+}
+.icon {
+   width: 1em; height: 1em;
+   vertical-align: -0.15em;
+   fill: currentColor;
+   overflow: hidden;
+}
+.actions span{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 26px;
+    font-weight: 200;
+    position: fixed;
+    top: 8px;
+    left: 8px;
+}
+.actions span > i{
+    font-size: 30px;
+    font-weight: 900
+}
+.divide{
+    position: fixed;
+    top: 50px;
+    left: 0;
+}
+.divide hr{
+    color: #ddd;
+    width: 100vw;
+}
+
+ #xxx{
+    background: yellowgreen;
+    display: block;
+    position: fixed;  /*下边的overflow hidden防手机屏跳动功能失效，只能将canvas绝对定位*/
+    top: 0;
+    left: 0;   
+}
+ body{
+    margin: 0;
+    overflow: hidden;  /*不需要滚动条,避免手机屏幕跳动*/
+ }
+/*button{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}*/
+.actions{
+    position: fixed;
+    top: 50px;
+    right: -17px;
+    padding: 20px;
+}
+.actions svg{
+    width: 1.5em;
+    height: 1.5em;
+    transition: all 0.3s;
+    margin: 0 10px;
+    fill: #aaa;
+}
+.actions svg.active{
+    fill: #222;
+    transform: scale(1.1);
+}
+/*.actions > #brush{
+    display: none;
+}
+.actions.x > #brush{
+    display: inline-block;
+}
+.actions.x > #eraser{
+    display: none;
+}*/
+ol{
+    list-style: none;
+}
+.colors{
+    position: fixed;
+    top: 72px;
+    left: 10px;
+}
+.colors > li{
+    width: 20px;
+    height: 20px;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    box-shadow: 0 0 3px rgba(0,0,0,0.15);
+    margin: 10px 0;
+    transition: all 0.3s;
+}
+.colors > li.red{
+    background: red;
+}
+.colors > li.yellow{
+    background: yellow;
+}
+.colors > li.blue{
+    background: blue;
+}
+.colors > li.black{
+    background: #000;
+}
+.colors > li.active{
+    box-shadow: 0 0 3px rgba(0,0,0,0.95);
+    transform: scale(1.2);
+}
+.fontweight{
+    position: fixed;
+    left: 50px;
+    top: 83px;
+}
+
+.sizes li{
+    margin: 3px 3px;
+}
+.sizes .thin{
+    height: 0;
+    width: 40px;
+    border-top: 2px solid black;
+}
+.sizes .thick{
+    height: 0;
+    width: 45px;
+    border-top: 7px solid black;
+}
+.clearfix::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+.fontweight .sizes li{
+    float: left;
+    margin: 0 8px 0 0;
+}

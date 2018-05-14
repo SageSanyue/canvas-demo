@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sage's 画板</title>
+    <link rel="stylesheet" href="./canvas.css">
+</head>
+<body>
+    <canvas id="xxx" width=300 height=300></canvas>
+
+    <div id=actions class="actions">
+        <span><i>Sage's</i> Canvas</span>
+        <svg id=pen class="active icon">
+            <use xlink:href="#icon-pen"></use>
+        </svg>
+        <svg id=eraser class="icon">
+            <use xlink:href="#icon-eraser"></use>
+        </svg>
+        <svg id=save class="icon">
+            <use xlink:href="#icon-save"></use>
+        </svg>
+        <svg id=clear class="icon">
+            <use xlink:href="#icon-bin"></use>
+        </svg>
+       <!-- <button id=eraser>橡皮擦</button>
+        <button id=brush>画笔</button>-->
+    </div>
+    <ol class="colors">
+        <li id=red class="red"></li>
+        <li id=yellow class="yellow"></li>
+        <li id=blue class="blue"></li>
+        <li id=black class="black"></li>
+    </ol>
+    <div class="divide"><hr></div>
+    <div class="fontweight clearfix">
+        <ol class="sizes">
+            <li id="thin" class="thin"></li>
+            <li id="thick" class="thick"></li>
+        </ol>
+    </div>
+    <!--
+    <script>
+        var yyy = document.getElementById('xxx')
+        var context = yyy.getContext('2d')
+
+        autoSetCanvasSize(yyy)
+        listenToMouse(yyy)  
+
+        function drawLine(x1,y1,x2,y2){
+            context.beginPath()
+            context.strokeStyle = 'black'
+            context.moveTo(x1,y1) //起点 
+            context.lineWidth = 3
+            context.lineTo(x2,y2)  //终点
+            context.stroke()
+            context.closePath()
+        }
+
+        /**************橡皮擦功能部分*******************/
+        var eraserEnabled = false
+        eraser.onclick = function(){
+            eraserEnabled = true
+            actions.className = 'actions x'
+        }
+        brush.onclick = function(){
+            eraserEnabled = false
+            actions.className = 'actions'
+        }
+        /*********************************************/ 
+        function autoSetCanvasSize(canvas){
+            userResize()
+            window.onresize = function(){
+                userResize()
+            }
+            function userResize(){
+                var pageWidth = document.documentElement.clientWidth
+                var pageHeight = document.documentElement.clientHeight //背下来这两句求页面宽高
+                canvas.width = pageWidth
+                canvas.height = pageHeight
+            }
+        } 
+
+        function listenToMouse(canvas){
+            var using = false
+            var lastPoint = {x:undefined,y:undefined}
+
+            canvas.onmousedown = function(aaa){
+                var x = aaa.clientX 
+                var y = aaa.clientY
+                using = true
+                if(eraserEnabled){
+                    context.clearRect(x-5,y-5,10,10)//矩形是把做左上角当起点画，故要减去一点才是矩形中间
+                }else{
+                lastPoint = {"x":x,"y":y}
+                }
+            }
+
+            canvas.onmousemove = function(aaa){
+                var x = aaa.clientX
+                var y = aaa.clientY
+                if(!using){return}
+                if(eraserEnabled){
+                    context.clearRect(x,y,10,10)
+                }else{
+                    var newPoint = {"x":x,"y":y}
+                    drawLine(lastPoint.x,lastPoint.y,newPoint.x,newPoint.y)
+                    lastPoint = newPoint
+                }
+            }
+
+            canvas.onmouseup = function(aaa){
+                using = false
+            }
+        }
+    </script>
+-->
+<script src="./canvas.js"></script>
+<script src="//at.alicdn.com/t/font_665384_pnp2jgiwvlnpcik9.js"></script>
+</body>
+</html>
